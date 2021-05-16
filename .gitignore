@@ -1,0 +1,10 @@
+qwireless/.vscode
+desktop.ini
+build/
+qwireless/CMakeLists.txt.user
+qwireless/DataBase/*.o
+qwireless/DataBase/qrap.log
+qwireless/DataBase/qraputil
+
+
+
