@@ -80,7 +80,7 @@
 
 
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * Error code specification.

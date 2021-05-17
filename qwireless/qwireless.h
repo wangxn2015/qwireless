@@ -34,9 +34,9 @@ using namespace std;
 
 //
 // Radio Planning Tool Includes
-//#include "DataBase/Config.h"
-//#include "DataBase/MainWindow.h"
-//#include "DataBase/LoginDialog.h"
+#include "DataBase/Config.h"
+#include "DataBase/MainWindow.h"
+#include "DataBase/LoginDialog.h"
 //#include "Prediction/cSpectralPlot.h"
 //#include "Prediction/cPlotTask.h"
 //#include "Prediction/cLink.h"

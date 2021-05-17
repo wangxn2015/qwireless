@@ -43,13 +43,13 @@
 #include "Config.h"
 
 using namespace std;
-using namespace Qrap;
+using namespace Qwireless;
 using namespace Poco::XML;
 using Poco::Exception;
 
 
 // global settings store
-cSettings Qrap::gSettings;
+cSettings Qwireless::gSettings;
 
 /*
  * cSettings class implementation

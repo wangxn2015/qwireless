@@ -37,7 +37,7 @@
 #include <Poco/SAX/InputSource.h>
 #include <Poco/Exception.h>
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * The global settings store class for a QRAP client or server.
@@ -57,7 +57,7 @@ namespace Qrap
 	class cSettings: public cBase
 	{
 	public:
-		/**
+                /**
 		 * Constructor.
 		 *
 		 */

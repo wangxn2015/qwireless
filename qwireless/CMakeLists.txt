@@ -505,6 +505,8 @@ SET (XML_FILES
 SET (qwireless_MOC_HDRS
 #	qrap.h
         qwireless.h
+        DataBase/Config.h
+        DataBase/cSettings.h
 
 
 )
@@ -512,6 +514,7 @@ SET (qwireless_MOC_HDRS
 SET (qwireless_SRCS
 #	qrap.cpp
         qwireless.cpp
+        DataBase/cSettings.cpp
 
 
 )

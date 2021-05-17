@@ -63,14 +63,14 @@ void QWireless::initGui()
     mToolBarPointer->addAction(mSiteAction);
     mToolBarPointer->addAction(mSelectSiteAction);
     mToolBarPointer->addAction(mDeleteSiteAction);
-    mToolBarPointer->addAction(mRadioAction);
-    mToolBarPointer->addAction(mPreferencesAction);
-    mToolBarPointer->addAction(mQActionPointer);
+    mToolBarPointer->addAction(mRadioAction);       //coverage
+    mToolBarPointer->addAction(mPreferencesAction); //para
+    mToolBarPointer->addAction(mQActionPointer); //database interface
     mToolBarPointer->addAction(mReadValueAction);
 
     mLoaded = true;
 
-//    openDatabaseConnection();
+    openDatabaseConnection();
 
 
 
@@ -146,6 +146,7 @@ void QWireless::unload()
         delete mSiteAction;
         delete mRadioAction;
         delete mPreferencesAction;
+
         delete mToolBarPointer;
 
 
@@ -154,6 +155,42 @@ void QWireless::unload()
     }
     cout << "QRap::unload(): leaving" << endl;
 }
+
+
+//******************************************************************************
+bool QWireless::openDatabaseConnection()
+{
+    cout<<"open database connection"<<endl;
+
+
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 QGISEXTERN QgisPlugin * classFactory(QgisInterface * theQgisInterfacePointer)
 {
