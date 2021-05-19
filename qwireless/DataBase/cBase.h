@@ -31,7 +31,7 @@
 #include "Types.h"
 #include "cAlert.h"
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * Logs a particular message along with other debug information, depending upon
@@ -101,7 +101,7 @@ namespace Qrap
 		 */
 		bool Log (const std::string& msg)
 		{
-			return Qrap::Log(alError, msg, msAlertCode, "(Unknown)", "(Unknown)", 0);
+                        return Qwireless::Log(alError, msg, msAlertCode, "(Unknown)", "(Unknown)", 0);
 		};
 		
 	};

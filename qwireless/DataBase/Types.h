@@ -30,7 +30,7 @@
 #include <vector>
 #include <map>
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * A data type encapsulating a 64-bit integer.

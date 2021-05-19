@@ -39,7 +39,7 @@
 
 using namespace std;
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * This class is used to create and read QRap's binary files needed for a fast DEM 

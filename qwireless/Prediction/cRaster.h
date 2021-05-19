@@ -34,7 +34,7 @@
 #include "cGDAL.h"
 #include "cBIN.h"
 
-namespace Qrap
+namespace Qwireless
 {
 	#define OUTOFRASTER -9999.9
 	/**

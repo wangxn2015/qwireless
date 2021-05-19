@@ -34,7 +34,7 @@ using std::string;
 
 
 
-namespace Qrap
+namespace Qwireless
 {
 	
 	const int         cCsvLineBufferSize  = 32768;   ///< The maximum number of bytes in a single line from a CSV file.

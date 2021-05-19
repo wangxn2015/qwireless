@@ -47,7 +47,7 @@
  * Explicitly define the classes we're using from each namespace.
  */
 using std::string;
-using namespace Qrap;
+using namespace Qwireless;
 
 /*
  * Static member definition
@@ -56,7 +56,7 @@ using namespace Qrap;
 // Initialise the default log file name and location (static member)
 string        cBase::msLogFileName("/var/log/gisrap.log");
 AlertCode     cBase::msAlertCode = acOk;
-AlertCallback cBase::msAlertCallback = (Qrap::AlertCallback)QRAP_ALERT_DEFAULT_CALLBACK;
+AlertCallback cBase::msAlertCallback = (Qwireless::AlertCallback)QRAP_ALERT_DEFAULT_CALLBACK;
 int           cBase::msAlertDepth = 0;
 
 
@@ -65,7 +65,7 @@ int           cBase::msAlertDepth = 0;
  * cBase class implementation
  */
 //************************************************************************
-bool Qrap::Log (AlertLevel level, const string& message, AlertCode code, const string& funcName,
+bool Qwireless::Log (AlertLevel level, const string& message, AlertCode code, const string& funcName,
 	const string& srcFile, int srcLine)
 {
 	//cout << "gLogFileName = " << cBase::gLogFileName << endl;
@@ -152,7 +152,7 @@ cBase::cBase ()
 }
 
 //*********************************************************************
-int Qrap::FindNonWhitespace (const string& str, unsigned start, bool skipSpecial)
+int Qwireless::FindNonWhitespace (const string& str, unsigned start, bool skipSpecial)
 {
 	int  i = start, len = str.length();
 	char ch;
@@ -179,7 +179,7 @@ int Qrap::FindNonWhitespace (const string& str, unsigned start, bool skipSpecial
 }
 
 //***********************************************************************
-string Qrap::ExtractLiteral (const string& str, int start, bool fullStopDelim)
+string Qwireless::ExtractLiteral (const string& str, int start, bool fullStopDelim)
 {
 	int       i = start, len = str.length(), escapeCount = 0;
 	string    output;
@@ -279,7 +279,7 @@ string Qrap::ExtractLiteral (const string& str, int start, bool fullStopDelim)
 
 
 //**********************************************************************
-string Qrap::ExtractKeyword (const string& str, int start)
+string Qwireless::ExtractKeyword (const string& str, int start)
 {
 	int    i = start, len = str.length();
 	string output;
@@ -302,7 +302,7 @@ string Qrap::ExtractKeyword (const string& str, int start)
 }
 
 //***************************************************************
-string Qrap::ExtractOperator (const string& str, int start)
+string Qwireless::ExtractOperator (const string& str, int start)
 {
 	int    i = start, len = str.length();
 	string output;
@@ -337,7 +337,7 @@ string Qrap::ExtractOperator (const string& str, int start)
 
 //********************************************************************
 // converts the given string into lowercase
-string Qrap::StrToLower (const string& str)
+string Qwireless::StrToLower (const string& str)
 {
 	int    i, len = str.length();
 	string temp;
@@ -354,7 +354,7 @@ string Qrap::StrToLower (const string& str)
 //********************************************************************
 // if the given string is not surrounded by apostrophes, put them there
 // and make sure that every other quote character is escaped
-string Qrap::StrQuote (const string& str, char strChar)
+string Qwireless::StrQuote (const string& str, char strChar)
 {
 	int    i, len = str.length();
 // 	int    slashcount = 0;
@@ -415,7 +415,7 @@ string Qrap::StrQuote (const string& str, char strChar)
 }
 
 //**********************************************************
-string Qrap::StrUnquote (const string& str)
+string Qwireless::StrUnquote (const string& str)
 {
 	string ret;
 	int    i = 0, len = str.length(), escapeCount = 0;
@@ -486,7 +486,7 @@ string Qrap::StrUnquote (const string& str)
 }
 
 //********************************************************************
-string Qrap::ExtractFilePath (const string& fileName)
+string Qwireless::ExtractFilePath (const string& fileName)
 {
 	StringArray pathArr;
 	string      path;
@@ -502,7 +502,7 @@ string Qrap::ExtractFilePath (const string& fileName)
 }
 
 //**********************************************************************
-void Qrap::SplitPath (const string& path, StringArray& output)
+void Qwireless::SplitPath (const string& path, StringArray& output)
 {
 	int    i, len = path.length();
 	string curDir;
@@ -528,7 +528,7 @@ void Qrap::SplitPath (const string& path, StringArray& output)
 }
 
 //********************************************************************
-bool Qrap::CreatePath (const string& path)
+bool Qwireless::CreatePath (const string& path)
 {
 	StringArray pathArr;
 	int         i, count;
@@ -570,7 +570,7 @@ bool Qrap::CreatePath (const string& path)
 }
 
 //*********************************************************************
-int Qrap::StringArrayPos (const StringArray& arr, const string& str)
+int Qwireless::StringArrayPos (const StringArray& arr, const string& str)
 {
 	int i, count = arr.size();
 	
@@ -582,7 +582,7 @@ int Qrap::StringArrayPos (const StringArray& arr, const string& str)
 }
 
 //**************************************************************************
-void Qrap::RemoveDuplicates (StringArray& arr)
+void Qwireless::RemoveDuplicates (StringArray& arr)
 {
 	StringArray temp;
 	int         i, count = arr.size();
@@ -599,7 +599,7 @@ void Qrap::RemoveDuplicates (StringArray& arr)
 }
 
 //**********************************************************************
-bool Qrap::SplitString (const string& str, char delim, StringArray& output)
+bool Qwireless::SplitString (const string& str, char delim, StringArray& output)
 {
 	int    i, len = str.length();
 	string temp;
@@ -710,7 +710,7 @@ string IntToHex (int val, unsigned digits = 2)
 }
 */
 //********************************************************************
-string Qrap::FormatSqlArray (const StringArray& arr)
+string Qwireless::FormatSqlArray (const StringArray& arr)
 {
 	string ret;
 	int    i, count = arr.size();
@@ -730,7 +730,7 @@ string Qrap::FormatSqlArray (const StringArray& arr)
 }
 
 //*************************************************************************
-bool Qrap::ParseSqlArray (const string& input, StringArray& output, bool strict)
+bool Qwireless::ParseSqlArray (const string& input, StringArray& output, bool strict)
 {
 	string temp, literal;
 	int    i = 0, len = input.length(), braceDepth = 0;
@@ -848,7 +848,7 @@ bool Qrap::ParseSqlArray (const string& input, StringArray& output, bool strict)
 }
 
 //***************************************************************
-string Qrap::JoinString (const StringArray& str, char delim)
+string Qwireless::JoinString (const StringArray& str, char delim)
 {
 	string ret;
 	int    i, count = str.size();
@@ -864,7 +864,7 @@ string Qrap::JoinString (const StringArray& str, char delim)
 }
 
 //**********************************************************************
-string Qrap::StripWhitespace (const string& str)
+string Qwireless::StripWhitespace (const string& str)
 {
 	string ret;
 	int    i, len = str.length(), spaceCount = 0;
@@ -891,7 +891,7 @@ string Qrap::StripWhitespace (const string& str)
 }
 
 //*******************************************************************
-void Qrap::ConsoleAlert (AlertLevel level, const std::string& msg)
+void Qwireless::ConsoleAlert (AlertLevel level, const std::string& msg)
 {
 	switch (level)
 	{
@@ -913,7 +913,7 @@ void Qrap::ConsoleAlert (AlertLevel level, const std::string& msg)
 }
 
 //**********************************************************************
-void Qrap::SplitWords (const string& str, StringArray& output)
+void Qwireless::SplitWords (const string& str, StringArray& output)
 {
 	int i = FindNonWhitespace(str, 0, true), len = str.length(), outSize = 0;
 	
@@ -931,7 +931,7 @@ void Qrap::SplitWords (const string& str, StringArray& output)
 }
 
 //**********************************************************************8
-double Qrap::FuzzyStringMatch (const StringArray& testWords, const StringArray& masterWords)
+double Qwireless::FuzzyStringMatch (const StringArray& testWords, const StringArray& masterWords)
 {
 	double wordMatch;
 	int    i, j, count, testCount = testWords.size(), testLen, masterLen, matches;
@@ -963,7 +963,7 @@ double Qrap::FuzzyStringMatch (const StringArray& testWords, const StringArray& 
 }
 
 //********************************************************************8
-int Qrap::FuzzyStringSetMatch (const string& testStr, const StringIntArray& masterSet)
+int Qwireless::FuzzyStringSetMatch (const string& testStr, const StringIntArray& masterSet)
 {
 	StringArray testWords, masterWords;
 	double      score, highScore = 0.0;
@@ -990,7 +990,7 @@ int Qrap::FuzzyStringSetMatch (const string& testStr, const StringIntArray& mast
 }
 
 //***********************************************************************
-string Qrap::FuzzyValueExtract (const string& str, const string& units, bool before)
+string Qwireless::FuzzyValueExtract (const string& str, const string& units, bool before)
 {
 	string exp, val;
 	
@@ -1013,7 +1013,7 @@ string Qrap::FuzzyValueExtract (const string& str, const string& units, bool bef
 
 
 //************************************************************************
-int Qrap::StringIntArrayPos (const StringIntArray& arr, const string& str)
+int Qwireless::StringIntArrayPos (const StringIntArray& arr, const string& str)
 {
 	for (StringIntArray::const_iterator it=arr.begin(); it != arr.end(); it++)
 	{
@@ -1024,7 +1024,7 @@ int Qrap::StringIntArrayPos (const StringIntArray& arr, const string& str)
 }
 
 //*********************************************************************
-bool Qrap::IsNumeric (const string& str)
+bool Qwireless::IsNumeric (const string& str)
 {
 	int i, len = str.length();
 	
@@ -1039,7 +1039,7 @@ bool Qrap::IsNumeric (const string& str)
 }
 
 //******************************************************************
-bool Qrap::IsKeyword (const string& str)
+bool Qwireless::IsKeyword (const string& str)
 {
 	int  i, len = str.length();
 	char ch;

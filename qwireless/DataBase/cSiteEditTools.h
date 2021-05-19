@@ -37,7 +37,7 @@
 using std::string;
 using namespace pqxx;
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * The cSitesEditTools contains routines useful for Site Editing.

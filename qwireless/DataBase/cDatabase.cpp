@@ -26,12 +26,12 @@
 #include "cDatabase.h"
 
 using std::string;
-using namespace Qrap;
+using namespace Qwireless;
 
 /*
  * Global variable declaration.
  */
-cDatabase Qrap::gDb;
+cDatabase Qwireless::gDb;
 
 //*****************************************************************
 // the internal cTransactor class

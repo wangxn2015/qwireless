@@ -38,7 +38,7 @@
 #define PI 3.1415926535897932384626433832795
 #define LIGSNEL 2.997924562e8
 
-namespace Qrap
+namespace Qwireless
 {
 	const double cDegResT=0.000833/90.0;
 	/**

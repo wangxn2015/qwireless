@@ -30,7 +30,7 @@
 
 using namespace std;
 
-string Qrap::TranslateAlertCode (AlertCode alertCode)
+string Qwireless::TranslateAlertCode (AlertCode alertCode)
 {
 	switch (alertCode)
 	{

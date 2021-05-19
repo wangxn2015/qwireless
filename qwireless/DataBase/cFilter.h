@@ -31,7 +31,7 @@
 #include <stdio.h>
 #include <QMessageBox>
 
-using namespace Qrap;
+using namespace Qwireless;
 using namespace std;
 
 class cFilter : public QWidget, private Ui::Filter

@@ -45,7 +45,7 @@ using namespace std;
 
 #undef CPL_SUPRESS_CPLUSPLUS
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * Description of class cGDAL

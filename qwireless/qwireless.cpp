@@ -162,21 +162,13 @@ bool QWireless::openDatabaseConnection()
 {
     cout<<"open database connection"<<endl;
 
-
+    if(!gSettings.LoadFromFile("/usr/lib/qgis/plugins/settings.xml"))
+    {
+        cout<<"Error loading settings when connecting to DB..."<<endl;
+        exit(1);
+    }
 
 }
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

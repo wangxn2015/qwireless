@@ -35,48 +35,48 @@
 /**
  * Throws an alert of type alError.
  */
-#define QRAP_THROW_ERROR(msg)               throw Qrap::cAlert(Qrap::alError, msg)
+#define QRAP_THROW_ERROR(msg)               throw Qwireless::cAlert(Qwireless::alError, msg)
 
 /**
  * Throws an alert of type alFatal.
  */
-#define QRAP_THROW_FATAL(msg)               throw Qrap::cAlert(Qrap::alFatal, msg)
+#define QRAP_THROW_FATAL(msg)               throw Qwireless::cAlert(Qwireless::alFatal, msg)
 
 /**
  * Sets the callback function for when one of QRAP_INFO, QRAP_WARN, QRAP_ERROR or QRAP_FATAL
  * are called.
  */
-#define QRAP_SET_ALERT_CALLBACK(callback)   Qrap::cBase::msAlertCallback = callback
+#define QRAP_SET_ALERT_CALLBACK(callback)   Qwireless::cBase::msAlertCallback = callback
 
 /**
  * Logs an information alert.
  */
-#define QRAP_INFO(msg)                      Qrap::Log(Qrap::alInfo, msg, Qrap::acOk, __PRETTY_FUNCTION__, __FILE__, __LINE__)
+#define QRAP_INFO(msg)                      Qwireless::Log(Qwireless::alInfo, msg, Qwireless::acOk, __PRETTY_FUNCTION__, __FILE__, __LINE__)
 
 /**
  * Logs a warning alert.
  */
-#define QRAP_WARN(msg)                      Qrap::Log(Qrap::alWarning, msg, Qrap::acOk, __PRETTY_FUNCTION__, __FILE__, __LINE__)
+#define QRAP_WARN(msg)                      Qwireless::Log(Qwireless::alWarning, msg, Qwireless::acOk, __PRETTY_FUNCTION__, __FILE__, __LINE__)
 
 /**
  * Logs an error alert. Carries the current alert code through.
  */
-#define QRAP_ERROR(msg)                     Qrap::Log(Qrap::alError, msg, cBase::msAlertCode, __PRETTY_FUNCTION__, __FILE__, __LINE__)
+#define QRAP_ERROR(msg)                     Qwireless::Log(Qwireless::alError, msg, cBase::msAlertCode, __PRETTY_FUNCTION__, __FILE__, __LINE__)
 
 /**
  * Logs an error alert - with alert code specified.
  */
-#define QRAP_ERROR_CODE(msg,code)           Qrap::Log(Qrap::alError, msg, code, __PRETTY_FUNCTION__, __FILE__, __LINE__)
+#define QRAP_ERROR_CODE(msg,code)           Qwireless::Log(Qwireless::alError, msg, code, __PRETTY_FUNCTION__, __FILE__, __LINE__)
 
 /**
  * Logs a fatal error alert. Carries current alert code through.
  */
-#define QRAP_FATAL(msg)                     Qrap::Log(Qrap::alFatal, msg, cBase::msAlertCode, __PRETTY_FUNCTION__, __FILE__, __LINE__)
+#define QRAP_FATAL(msg)                     Qwireless::Log(Qwireless::alFatal, msg, cBase::msAlertCode, __PRETTY_FUNCTION__, __FILE__, __LINE__)
 
 /**
  * Logs a fatal error alert - with alert code specified.
  */
-#define QRAP_FATAL_CODE(msg,code)           Qrap::Log(Qrap::alFatal, msg, code, __PRETTY_FUNCTION__, __FILE__, __LINE__)
+#define QRAP_FATAL_CODE(msg,code)           Qwireless::Log(Qwireless::alFatal, msg, code, __PRETTY_FUNCTION__, __FILE__, __LINE__)
 
 
 

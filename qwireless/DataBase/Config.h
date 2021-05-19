@@ -29,7 +29,7 @@
 //#define QRAP_SERVER_DAEMON
 #define QRAP_SERVER_EDITION
 
-#define QRAP_ALERT_DEFAULT_CALLBACK Qrap::ConsoleAlert
+#define QRAP_ALERT_DEFAULT_CALLBACK Qwireless::ConsoleAlert
 #define QRAP_DEBUG
 #define ANTENNASCALE 60.0
 

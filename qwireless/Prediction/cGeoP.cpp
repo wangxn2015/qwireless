@@ -24,7 +24,7 @@
 
 #include "cGeoP.h"
 
-using namespace Qrap;
+using namespace Qwireless;
 using namespace std;
 
 const double rd = PI/180.0; //converts degrees to radials

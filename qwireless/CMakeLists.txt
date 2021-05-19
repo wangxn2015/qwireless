@@ -507,6 +507,12 @@ SET (qwireless_MOC_HDRS
         qwireless.h
         DataBase/Config.h
         DataBase/cSettings.h
+        DataBase/cAlert.h
+        DataBase/cBase.h
+        DataBase/Types.h
+        DataBase/cDatabase.h
+        Prediction/cGeoP.h
+
 
 
 )
@@ -515,7 +521,10 @@ SET (qwireless_SRCS
 #	qrap.cpp
         qwireless.cpp
         DataBase/cSettings.cpp
-
+        DataBase/cAlert.cpp
+        DataBase/cBase.cpp
+        DataBase/cDatabase.cpp
+        Prediction/cGeoP.cpp
 
 )
 

@@ -141,7 +141,7 @@ private:
 //    void UpdateSiteLayer();
 //    void InitRubberBand(bool IsArea);
 //    void DesRubberBand();
-//    bool openDatabaseConnection();
+    bool openDatabaseConnection();
 //    bool PerformPrediction();
 
 //    MouseEvents *Mouse;
