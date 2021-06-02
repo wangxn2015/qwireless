@@ -29,7 +29,7 @@
 //#include <QDebug>
 
 using namespace std;
-using namespace Qrap;
+using namespace Qwireless;
 
 //*******************************************************************************
 // Constructor that creates all the widgets

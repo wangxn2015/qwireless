@@ -512,7 +512,7 @@ SET (qwireless_MOC_HDRS
         DataBase/Types.h
         DataBase/cDatabase.h
         Prediction/cGeoP.h
-
+        DataBase/LoginDialog.h
 
 
 )
@@ -525,7 +525,7 @@ SET (qwireless_SRCS
         DataBase/cBase.cpp
         DataBase/cDatabase.cpp
         Prediction/cGeoP.cpp
-
+        DataBase/LoginDialog.cpp
 )
 
 SET (qwireless_PLUGIN_SRCS

@@ -41,13 +41,13 @@ void QWireless::initGui()
     mPoints.clear();
     mMouseType = CLEAN;
 
-    mQActionPointer = new QAction(QIcon(":/qrap/Data.png"),tr("Q-Rap Database Interface"), this);
-    mSiteAction = new QAction(QIcon(":/qrap/Site.png"),tr("Q-Rap: Place a Site"), this);
-    mSelectSiteAction = new QAction(QIcon(":/qrap/SiteSelect.png"),tr("Q-Rap: Select a Site"), this);
-    mDeleteSiteAction = new QAction(QIcon(":/qrap/SiteDelete.png"),tr("Q-Rap: Delete a Site"), this);
-    mRadioAction = new QAction(QIcon(":/qrap/Coverage.png"),tr("Q-Rap: Perform a Prediction"), this);
-    mPreferencesAction = new QAction(QIcon(":/qrap/Preferences.png"),tr("Q-Rap Preferences"), this);
-    mReadValueAction = new QAction(QIcon(":/qrap/Questionmark.jpg"),tr("read map layer value"), this);
+    mQActionPointer = new QAction(QIcon(":/qrap/Data.png"),tr("QWireless Database Interface"), this);
+    mSiteAction = new QAction(QIcon(":/qrap/Site.png"),tr("QWireless: Place a Site"), this);
+    mSelectSiteAction = new QAction(QIcon(":/qrap/SiteSelect.png"),tr("QWireless: Select a Site"), this);
+    mDeleteSiteAction = new QAction(QIcon(":/qrap/SiteDelete.png"),tr("QWireless: Delete a Site"), this);
+    mRadioAction = new QAction(QIcon(":/qrap/Coverage.png"),tr("QWireless: Perform a Prediction"), this);
+    mPreferencesAction = new QAction(QIcon(":/qrap/Preferences.png"),tr("QWireless Preferences"), this);
+    mReadValueAction = new QAction(QIcon(":/qrap/Questionmark.jpg"),tr("QWireless: read map layer value"), this);
 
     connect(mQActionPointer, SIGNAL(activated()), this, SLOT(run()));
     connect(mSiteAction, SIGNAL(activated()), this, SLOT(PlaceSite()));
@@ -167,6 +167,14 @@ bool QWireless::openDatabaseConnection()
         cout<<"Error loading settings when connecting to DB..."<<endl;
         exit(1);
     }
+
+    cout << "Na Load Settings file in QRap::openDatabaseConnection() " << endl;
+    LoginDialog* loginDialog;
+
+    loginDialog = new LoginDialog(0);
+
+    cout<<"qgisMainWindow:"<<(void*)mQgisMainWindow<<endl;
+    cout<< "open database connection finished"<<endl;
 
 }
 

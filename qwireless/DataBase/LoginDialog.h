@@ -42,7 +42,7 @@
 
 using namespace std;
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	* This class inherits QDialog and forms a simple dialog that captures the username and password
