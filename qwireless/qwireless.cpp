@@ -72,6 +72,12 @@ void QWireless::initGui()
 
     openDatabaseConnection();
 
+    //! 关联鼠标事件
+    Mouse = new MouseEvents(mQGisIface->mapCanvas());
+    cout << "Na Mouse" << endl;
+    connect(Mouse, SIGNAL(RightPoint(QgsPoint&)), this, SLOT(ReceivedRightPoint(QgsPoint&)));
+    connect(Mouse, SIGNAL(LeftPoint(QgsPoint&)), this, SLOT(ReceivedLeftPoint(QgsPoint&)));
+
 
 
 
@@ -160,7 +166,7 @@ void QWireless::unload()
 //******************************************************************************
 bool QWireless::openDatabaseConnection()
 {
-    cout<<"open database connection"<<endl;
+    cout<<"QWireless::open database connection"<<endl;
 
     if(!gSettings.LoadFromFile("/usr/lib/qgis/plugins/settings.xml"))
     {
@@ -168,13 +174,13 @@ bool QWireless::openDatabaseConnection()
         exit(1);
     }
 
-    cout << "Na Load Settings file in QRap::openDatabaseConnection() " << endl;
+    cout << "QWireless::Na Load Settings file in QRap::openDatabaseConnection() " << endl;
     LoginDialog* loginDialog;
 
     loginDialog = new LoginDialog(0);
 
-    cout<<"qgisMainWindow:"<<(void*)mQgisMainWindow<<endl;
-    cout<< "open database connection finished"<<endl;
+    cout<<"QWireless::qgisMainWindow:"<<(void*)mQgisMainWindow<<endl;
+    cout<< "QWireless::open database connection finished"<<endl;
 
 }
 
