@@ -1740,7 +1740,7 @@ bool cDatabase::GetFieldUiParams (const string& tableName, const string& fieldNa
 //**************************************************************************
 cDatabase::FieldUiType cDatabase::GetFieldUiType (const string& tableName, const string& fieldName)
 {
-	string ui(mStructure[tableName].mFields[fieldName].mUi);
+    string ui(mStructure[tableName].mFields[fieldName].mUi); // table site--field status--ui--dropdown
 	
 	
 	if (ui.length() > 0)

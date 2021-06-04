@@ -30,14 +30,14 @@
  * Explicitly define the classes we're using from each namespace.
  */
 using std::string;
-using namespace Qrap;
+using namespace Qwireless;
 
 
 //****************************************************************
-QString Qrap::FindLatLon(QString lat,QString lon)
+QString Qwireless::FindLatLon(QString lat,QString lon)
 {
 //	Qrap::DegreeFormat locationFormat;
-	string setting = Qrap::gDb.GetSetting("location");
+    string setting = Qwireless::gDb.GetSetting("location");
 			
 	QString format;
 	QString latitude;
@@ -119,7 +119,7 @@ QString Qrap::FindLatLon(QString lat,QString lon)
 
 
 //**********************************************************************************************
-pqxx::result Qrap::FindClosebySites(cGeoP Here, int distance)
+pqxx::result Qwireless::FindClosebySites(cGeoP Here, int distance)
 {
 	string query;
 	pqxx::result r;
@@ -167,13 +167,13 @@ pqxx::result Qrap::FindClosebySites(cGeoP Here, int distance)
 //		QMessageBox::information(this, "QRap", "Database select on sites table for sites in area failed");
 		QRAP_WARN("Database select on sites table for sites in area failed");
 	}
-	Qrap::gDb.GetLastResult(SiteCloseby);
+    Qwireless::gDb.GetLastResult(SiteCloseby);
 
 	return SiteCloseby;
 }
 
 //*********************************************************************************************
-int Qrap::GetGroundHeight(double lat, double lon)
+int Qwireless::GetGroundHeight(double lat, double lon)
 {
 
 	string query;
@@ -245,19 +245,19 @@ SELECT filename, location,centmer,filetype,projection,fileformat,proj4string  FR
 				if (!strcmp(text,"BINFILE"))
 				{
 					Type = BINFILE;
-                    cout << "In cSiteEditTools... Qrap::GetGroundHeight(..) ... fileformat ==BINFILE" << endl;
+                    cout << "In cSiteEditTools... Qwireless::GetGroundHeight(..) ... fileformat ==BINFILE" << endl;
 				}
-				else
+                else //!-------------------
 				{
 					Type = GDALFILE;
-                    cout << "In cSiteEditTools... Qrap::GetGroundHeight(..) ... fileformat ==GDALFILE" << endl;
+                    cout << "In cSiteEditTools... Qwireless::GetGroundHeight(..) ... fileformat ==GDALFILE" << endl;
 				}
 				
 				strcpy(text,r[0]["projection"].c_str());
-				if (!strcmp(text,"DEG"))
+                if (!strcmp(text,"DEG")) //!-------------------
 				{
 					projection = DEG;
-                    cout << "In cSiteEditTools... Qrap::GetGroundHeight(..) ... in DEG" << endl;
+                    cout << "In cSiteEditTools...  Qwireless::GetGroundHeight(..) ... in DEG" << endl;
 				}
 				else if (!strcmp(text,"UTM"))
 				{
@@ -274,11 +274,14 @@ SELECT filename, location,centmer,filetype,projection,fileformat,proj4string  FR
 					projection = WGS84GC;
 					cout << "In cSiteEditTools: Qrap::GetGroundHeight(..) Projection NDEF" << endl;				
 				}
+
 				strcpy(text,r[0]["proj4string"].c_str());
 				cRaster CRaster(r[0]["location"].c_str(),r[0]["filename"].c_str(),Type,projection,text);
                 cout << "In cSiteEditTools... Qrap::GetGroundHeight(...). After raster construct" << endl;
 				cGeoP Temp(lat,lon,DEG);
+                cout<<"read value from CRaster.."<<endl;
 				GroundHeight = CRaster.GetValue(Temp);
+
 			}
 		}
 	}
@@ -293,7 +296,7 @@ SELECT filename, location,centmer,filetype,projection,fileformat,proj4string  FR
 }
 
 //***********************************************************
-bool Qrap::InsertDefaultRadioInsts(int SiteId)
+bool Qwireless::InsertDefaultRadioInsts(int SiteId)
 {
 	unsigned i;
 	char * siteID;
@@ -484,7 +487,7 @@ bool Qrap::InsertDefaultRadioInsts(int SiteId)
 }
 
 //***********************************************************
-bool Qrap::DeleteBTL(int SiteId)
+bool Qwireless::DeleteBTL(int SiteId)
 {
 	unsigned i;
 	char * siteID;
@@ -494,7 +497,7 @@ bool Qrap::DeleteBTL(int SiteId)
 	machineID = new char[33];
 	gcvt(gDb.globalMachineID,8,machineID);
 	string path;
-	path =  Qrap::gDb.GetSetting("BTLdir");
+    path =  Qwireless::gDb.GetSetting("BTLdir");
 	string file;
 	string query = "SELECT btlplot ";
 	query += "FROM BTL ";
@@ -533,7 +536,7 @@ bool Qrap::DeleteBTL(int SiteId)
 }
 
 //*************************************************************************
-string Qrap::ExtractDecimalDegrees (const string& val, DegreeFormat format, bool directionText, bool latitude)
+string Qwireless::ExtractDecimalDegrees (const string& val, DegreeFormat format, bool directionText, bool latitude)
 {
 
 	char   *ret;
@@ -546,7 +549,7 @@ string Qrap::ExtractDecimalDegrees (const string& val, DegreeFormat format, bool
 }
 
 //*************************************************************************
-double Qrap::GetDecimalDegrees (const string& val, DegreeFormat format, bool directionText, bool latitude)
+double Qwireless::GetDecimalDegrees (const string& val, DegreeFormat format, bool directionText, bool latitude)
 {
 	unsigned    i = FindNonWhitespace(val, 0, true), len = val.length();
 	string s;
@@ -658,7 +661,7 @@ double Qrap::GetDecimalDegrees (const string& val, DegreeFormat format, bool dir
 
 //**************************************************************************
 //! e.g. 例子为 parse data from "POINT(45.2603 2.02811)" 经度lon在前，维度lat在后
-bool Qrap::ExtractLatLongFromPoint (const string& pointStr, double& latitude, double& longitude)
+bool Qwireless::ExtractLatLongFromPoint (const string& pointStr, double& latitude, double& longitude)
 {
 	int    i, len = pointStr.length();
 	string temp;
@@ -690,7 +693,7 @@ bool Qrap::ExtractLatLongFromPoint (const string& pointStr, double& latitude, do
 
 //*************************************************************************
 //! 从字符中解出 经纬度
-bool Qrap::ExtractLatLongFromPoint (const string& pointStr, DegreeFormat outputFormat,
+bool Qwireless::ExtractLatLongFromPoint (const string& pointStr, DegreeFormat outputFormat,
 		string& latitude, string& longitude)
 {
 	double la, lo, deg, min, sec;
@@ -791,7 +794,7 @@ bool Qrap::ExtractLatLongFromPoint (const string& pointStr, DegreeFormat outputF
 }
 
 //*************************************************************************
-QString Qrap::MakeStringFromDecDegrees ( double decimaldegrees, DegreeFormat outputFormat, bool latitude)
+QString Qwireless::MakeStringFromDecDegrees ( double decimaldegrees, DegreeFormat outputFormat, bool latitude)
 {
 	double deg=0.0, min=0.0, sec=0.0;
 	bool   northOReast;

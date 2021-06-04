@@ -40,8 +40,8 @@ using namespace std;
 //#include "Prediction/cSpectralPlot.h"
 //#include "Prediction/cPlotTask.h"
 //#include "Prediction/cLink.h"
-//#include "cMouseEvents.h"
-//#include "Interface/cPlaceSite.h"
+#include "cMouseEvents.h"
+#include "Interface/cPlaceSite.h"
 //#include "Interface/cDeleteObject.h"
 //#include "Interface/cConfirmLink.h"
 //#include "Interface/cConfirmPrediction.h"
@@ -76,8 +76,18 @@ enum MouseActionType
 {
     CLEAN,
     PLACESITE,
+    SELECTSITE,
     DELETESITE,
+    MOVESITE,
+    LINK1,
+    LINK2,
+    SELECTLINK,
+    DELETELINK,
     AREA,
+    MULTILINK,
+    OPTIMISATION,
+    SPECTRAL,
+    FILTERAREA
 
 };
 
@@ -110,9 +120,9 @@ public slots:
 //  	void Test();
 //  	void MakeUpdateFile();
 
-//    void ReceivedRightPoint(QgsPoint &);
-//    void ReceivedLeftPoint(QgsPoint &);
-//    void ReceiveMouseMove(QgsPoint &);
+    void ReceivedRightPoint(QgsPoint &);
+    void ReceivedLeftPoint(QgsPoint &);
+    void ReceiveMouseMove(QgsPoint &);
 //    void ReadMap(QgsPoint &);
     void ReadMapValue();
 
@@ -136,20 +146,20 @@ private:
 
     QWidget *mQGisApp;
 
-//    void PlaceSiteDialog(double lat, double lon,bool IsOld);
+    void PlaceSiteDialog(double lat, double lon,bool IsOld);
 //    void MoveSiteDialog(double lat, double lon);
 //    void UpdateSiteLayer();
-//    void InitRubberBand(bool IsArea);
-//    void DesRubberBand();
+    void InitRubberBand(bool IsArea);
+    void DesRubberBand();
     bool openDatabaseConnection();
-//    bool PerformPrediction();
+    bool PerformPrediction();
 
-//    MouseEvents *Mouse;
+    MouseEvents *Mouse;
 //    QString Action;
     MouseActionType mMouseType;
     QList<QgsPoint> mPoints;
-//    QgsRubberBand *mRubberBand;
-//    cPlaceSite *mPlacedSite;
+    QgsRubberBand *mRubberBand;
+    cPlaceSite *mPlacedSite;
     bool mLoaded;
     // the username and password for the database login.
 //    string machinename;

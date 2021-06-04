@@ -504,6 +504,7 @@ SET (XML_FILES
 
 SET (qwireless_MOC_HDRS
 #	qrap.h
+        cMouseEvents.h
         qwireless.h
         DataBase/Config.h
         DataBase/cSettings.h
@@ -511,21 +512,35 @@ SET (qwireless_MOC_HDRS
         DataBase/cBase.h
         DataBase/Types.h
         DataBase/cDatabase.h
-        Prediction/cGeoP.h
         DataBase/LoginDialog.h
+        Interface/cPlaceSite.h
+        DataBase/cSiteEditTools.h
 
+        Prediction/cGeoP.h
+        Prediction/cRaster.h
+        Prediction/cGDAL.h
+        Prediction/cMemmngr.h
+        Prediction/cBIN.h
 
 )
 
 SET (qwireless_SRCS
 #	qrap.cpp
+        cMouseEvents.cpp
         qwireless.cpp
         DataBase/cSettings.cpp
         DataBase/cAlert.cpp
         DataBase/cBase.cpp
         DataBase/cDatabase.cpp
-        Prediction/cGeoP.cpp
         DataBase/LoginDialog.cpp
+        Interface/cPlaceSite.cpp
+        DataBase/cSiteEditTools.cpp
+
+        Prediction/cGeoP.cpp
+        Prediction/cRaster.cpp
+        Prediction/cGDAL.cpp
+        Prediction/cMemmngr.cpp
+        Prediction/cBIN.cpp
 )
 
 SET (qwireless_PLUGIN_SRCS
@@ -533,7 +548,7 @@ SET (qwireless_PLUGIN_SRCS
 )
 
 SET (qwireless_UIS 
-
+        Interface/Site.ui
 
 
 )

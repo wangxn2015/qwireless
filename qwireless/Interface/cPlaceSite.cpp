@@ -52,7 +52,7 @@ cPlaceSite::cPlaceSite(QgisInterface * QgisInt, QWidget* parent,
 	for( iterator=vals.begin() ; iterator!=vals.end() ; iterator++ )
 	{
 		QString temp = QString::fromStdString(iterator->second);
-		comboBoxStatus->insertItem(j,temp,qVariantFromValue(iterator->first));
+        comboBoxStatus->insertItem(j,temp,qVariantFromValue(iterator->first));
 		j++;
 	} // for
 	if (j==0) comboBoxStatus->insertItem(0,"0:NULL");
@@ -66,7 +66,7 @@ cPlaceSite::~cPlaceSite()
 }
 
 //***********************************************************
-bool cPlaceSite::SetParameters(QString Lat,QString Lon,bool Edit,double scale) //Edit = false
+bool cPlaceSite::SetParameters(QString Lat,QString Lon,bool Edit,double scale) //Edit = false ; lat--weidu; lon--jingdu
 {
 	mScale = scale;
 	string query;
@@ -75,7 +75,7 @@ bool cPlaceSite::SetParameters(QString Lat,QString Lon,bool Edit,double scale) /
 	DegreeFormat locationFormat;
 	string setting = gDb.GetSetting("location");
 			
-	if (setting=="DD:MM:SS") //! 返回
+    if (setting=="DD:MM:SS") //! 返回 // use this format
 		locationFormat = dfDegMinSec; //! 时分秒格式
 	else if (setting=="DD:MM.mm")
 		locationFormat = dfDegMin;
@@ -122,7 +122,7 @@ bool cPlaceSite::SetParameters(QString Lat,QString Lon,bool Edit,double scale) /
     else //! false enter here
 	{
 		string La,Lo;
-		ExtractLatLongFromPoint(Location,locationFormat,La,Lo); //! 转化
+        ExtractLatLongFromPoint(Location,locationFormat,La,Lo); //! 转化
 		txtLongitude->setText(Lo.c_str());
 		txtLatitude->setText(La.c_str());
 	}
@@ -229,11 +229,15 @@ void cPlaceSite::on_btnEditInstallation_clicked() //! 编辑安装basestation
 	if (mId>-1)
 	{
 		cout << "cPlaceSite::on_btnEditInstallation_clicked() voor Main Window initialise" << endl;
-		gMainWindow = new MainWindow(); //! 配置其它tech 等
-		cout << "cPlaceSite::on_btnEditInstallation_clicked() voor EditSite" << endl;
-		gMainWindow->rapTab->mSites->EditSite(mId);
-		cout << "cPlaceSite::on_btnEditInstallation_clicked() voor gMainWindow->show()" << endl;
-		gMainWindow->show();
+
+//!---------------------uncomment later----------------------------
+//		gMainWindow = new MainWindow(); //! 配置其它tech 等
+//		cout << "cPlaceSite::on_btnEditInstallation_clicked() voor EditSite" << endl;
+//		gMainWindow->rapTab->mSites->EditSite(mId);
+//		cout << "cPlaceSite::on_btnEditInstallation_clicked() voor gMainWindow->show()" << endl;
+//		gMainWindow->show();
+//!-------------------------------------------------
+
 		accept();
         close(); // close placeSie ui
 	}

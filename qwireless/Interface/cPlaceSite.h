@@ -44,7 +44,7 @@
 #include "../DataBase/cSiteEditTools.h"
 
 using namespace std;
-using namespace Qrap;
+using namespace Qwireless;
 
 class cPlaceSite: public QDialog, private Ui::Site
 {Q_OBJECT

@@ -26,7 +26,7 @@
 
 
 #include "cBIN.h"
-using namespace Qrap;
+using namespace Qwireless;
 
 //***************************************************************
 cBIN::cBIN()
