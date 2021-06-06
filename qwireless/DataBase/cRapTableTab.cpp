@@ -28,7 +28,7 @@
 #include "cRapTableTab.h"
 
 using namespace std;
-using namespace Qrap;
+using namespace Qwireless;
 
 // Constructor that creates all the GuiEngine classes for each database table
 cRapTableTab::cRapTableTab (QWidget* parent, QString table) : QTabWidget(parent)

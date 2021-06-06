@@ -51,7 +51,7 @@
 #include "MainWindow.h"
 
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	* The cRapFormBuilder class, this class inherits the QWidget class and is responsible for containing

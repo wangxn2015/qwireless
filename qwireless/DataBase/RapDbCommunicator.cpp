@@ -30,7 +30,7 @@
 #include "RapDbCommunicator.h"
 #include "LogDialog.h"
 
-using namespace Qrap;
+using namespace Qwireless;
 using namespace std;
 
 //*************************************************************

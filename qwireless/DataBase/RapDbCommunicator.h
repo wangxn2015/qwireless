@@ -53,7 +53,7 @@
 #include "ComboDelegate.h"
 #include "MainWindow.h"
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * The RapDbCommunicator class is a custom class that will enable a calling class to communicate with

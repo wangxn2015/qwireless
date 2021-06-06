@@ -52,7 +52,7 @@
 #include "RapDbCommunicator.h"
 #include "cRapTableTab.h"
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	 * The cRapSites class inherits the basic Qt Widget class and this class is responsible

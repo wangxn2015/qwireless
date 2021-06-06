@@ -37,7 +37,7 @@
 #include "MainWindow.h"
 #include "cRapFormBuilder.h"
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	* The cRapTableTab class, this class inherits the QTabWidget class and is responsible for containing

@@ -40,7 +40,7 @@
 class QAction;
 class QMenu;
 
-namespace Qrap
+namespace Qwireless
 {
 	class RapTab;
 	

@@ -230,6 +230,7 @@ void cPlaceSite::on_btnEditInstallation_clicked() //! 编辑安装basestation
 	{
 		cout << "cPlaceSite::on_btnEditInstallation_clicked() voor Main Window initialise" << endl;
 
+//!----------------------------------------------------------------
 //!---------------------uncomment later----------------------------
 //		gMainWindow = new MainWindow(); //! 配置其它tech 等
 //		cout << "cPlaceSite::on_btnEditInstallation_clicked() voor EditSite" << endl;

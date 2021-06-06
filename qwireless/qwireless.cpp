@@ -88,10 +88,10 @@ void QWireless::initGui()
 void QWireless::run()
 {
     cout<<"run"<<endl;
-    //    gMainWindow = new MainWindow(mQgisMainWindow); // param 'qgisMainWindow' is 0
-    //    connect(gMainWindow, SIGNAL(SelectArea()),this,  SLOT(SelectArea()));//! not sure what's the use of this line. wxn
-    //    gMainWindow->show();
-    //    mQGisIface->mapCanvas()->refresh();
+    gMainWindow = new MainWindow(mQgisMainWindow); //
+    connect(gMainWindow, SIGNAL(SelectArea()),this,  SLOT(SelectArea()));//! not sure what's the use of this line. wxn
+    gMainWindow->show();
+    mQGisIface->mapCanvas()->refresh();
 }
 
 void QWireless::PlaceSite()

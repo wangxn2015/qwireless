@@ -28,7 +28,7 @@
 #include "cRapSites.h"
 #include "cSearchForm.h"
 
-using namespace Qrap;
+using namespace Qwireless;
 using namespace std;
 
 

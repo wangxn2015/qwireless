@@ -41,7 +41,7 @@
 #include "cRapRasterFiles.h"
 #include "cRapMeasurements.h"
 
-namespace Qrap
+namespace Qwireless
 {
 	/**
 	* The RapTab class, this class inherits the QTabWidget class and is responsible for containing

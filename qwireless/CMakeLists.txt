@@ -515,6 +515,20 @@ SET (qwireless_MOC_HDRS
         DataBase/LoginDialog.h
         Interface/cPlaceSite.h
         DataBase/cSiteEditTools.h
+        DataBase/MainWindow.h
+        DataBase/RapTab.h
+        DataBase/cRapTableTab.h
+        DataBase/cRapFormBuilder.h
+        DataBase/RapDbCommunicator.h
+        DataBase/cRapSites.h
+        DataBase/cFilter.h
+        DataBase/cRapCells.h
+        DataBase/cRapInventory.h
+        DataBase/cRapSupportingTables.h
+        DataBase/cRapLinks.h
+        DataBase/cRapServedKeyLocations.h
+        DataBase/cRapRasterFiles.h
+        DataBase/cRapMeasurements.h
 
         Prediction/cGeoP.h
         Prediction/cRaster.h
@@ -528,6 +542,7 @@ SET (qwireless_SRCS
 #	qrap.cpp
         cMouseEvents.cpp
         qwireless.cpp
+        DataBase/MainWindow.cpp
         DataBase/cSettings.cpp
         DataBase/cAlert.cpp
         DataBase/cBase.cpp
@@ -535,6 +550,21 @@ SET (qwireless_SRCS
         DataBase/LoginDialog.cpp
         Interface/cPlaceSite.cpp
         DataBase/cSiteEditTools.cpp
+        DataBase/RapTab.cpp
+        DataBase/cRapTableTab.cpp
+        DataBase/cRapFormBuilder.cpp
+        DataBase/RapDbCommunicator.cpp
+        DataBase/cRapSites.cpp
+        DataBase/cSiteEditTools.cpp
+        DataBase/cRapSites.cpp
+        DataBase/cFilter.cpp
+        DataBase/cRapCells.cpp
+        DataBase/cRapInventory.cpp
+        DataBase/cRapSupportingTables.cpp
+        DataBase/cRapLinks.cpp
+        DataBase/cRapServedKeyLocations.cpp
+        DataBase/cRapRasterFiles.cpp
+        DataBase/cRapMeasurements.cpp
 
         Prediction/cGeoP.cpp
         Prediction/cRaster.cpp

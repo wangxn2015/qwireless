@@ -48,9 +48,9 @@
 #endif
 
 using namespace std;
-using namespace Qrap;
+using namespace Qwireless;
 
-MainWindow* Qrap::gMainWindow; //! attention here for error handling system
+MainWindow* Qwireless::gMainWindow; //! attention here for error handling system
 
 //****************************************************************************
 MainWindow::MainWindow (QWidget* parent, Qt::WFlags fl)
@@ -58,7 +58,7 @@ MainWindow::MainWindow (QWidget* parent, Qt::WFlags fl)
 	
 	
 	// Setup the QRAP error handling system
-    QRAP_SET_ALERT_CALLBACK((AlertCallback)(Qrap::MainWindowAlert));//! what's this?
+    QRAP_SET_ALERT_CALLBACK((AlertCallback)(Qwireless::MainWindowAlert));//! what's this?
 	
 	CreateActions();
 	CreateMenus();
